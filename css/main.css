@@ -1,0 +1,90 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+.zerorightmargin
+{margin-right:0px;
+}
+	
+	
+	.zeropadding
+	{
+		margin-top:10px;
+	padding-right:0px;
+	font-size:18px;	
+		
+		}
+.withborder{
+	border-style:solid;
+	border-color:#CCC;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	border-width:thin;
+		}
+
+.site-footer
+{
+	background: -webkit-linear-gradient(grey, black); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(grey, black); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(grey, black); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(grey, black); /* Standard syntax */
+	
+	color:#fff;
+	margin-top:30px;
+	padding-top:10px
+}
+.site-footer ul
+{
+    
+    list-style-type: none;
+}
+.site-footer a
+{  
+    text-decoration: none;
+    color: #fff;
+}
+.site-footer a:hover
+{  
+    color: #d58512;
+}
+.rightnav li:not(:first-child)
+{
+    border-top: thin solid #CCC;
+    border-collapse: collapse;
+    transition: background-color 2s;
+    margin: 0px;
+    border-radius: 0px;
+    
+    
+}
+.rightnav li a
+{
+    transition: background-color 1.25s;
+    transition: padding-right 1s;
+    
+}
+.rightnav li a:hover
+{
+    
+    background-color: #CCC;
+    padding-right:40px;
+}
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
