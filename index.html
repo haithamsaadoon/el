@@ -13,31 +13,38 @@
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap-rtl.min.css">
-        <style>
-            body {
-                padding-top: 50px;
-                
-            }
-        </style>
+       
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" type="text/css" href="css/carousal.css">
         <link rel="stylesheet" href="css/main.css">
-       
-
-
-<script src="js/vendor/jquery-1.11.2.min.js"></script>
-
-
+        <script src="js/vendor/jquery-1.11.2.min.js"></script>
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
          <script src="jwplayer-7.0.0/jwplayer.js"></script>
       <script>jwplayer.key="br0iERud1VlX4Kzcbo37wsO+tWfBBCtdkJT7sg==";</script>
- 
+      <script>
+            $(document).ready(function(){
+                $(".sub").hover(function(){
+                   $(".submenu").css("visibility", "visible");}, function(){
+                    $(".submenu").css("visibility", "hidden");
+                });
+                $("li:has(ul)").hover(function(){
+                   $(".submenu").css("visibility", "visible");}, function(){
+                    $(".submenu").css("visibility", "hidden");
+                   
+                });
+            });
+      </script>
     </head>
     <body>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+   
+        <a style="position: fixed;display: block;left:0;top: 100px;"><img style="width: 65px;height: 60px;" alt="Support Icon" src="img/support.jpg"/></a> 
+        
+              
+        
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -65,7 +72,8 @@
     </nav>
 <div class="container">
 
-    <div style="width:100%; background-color:#F00;height:245px;						     background-image:url(img/eLearning-Banner.jpg)">
+    <div style="width:100%; background-color:#F00;height:245px;	background-image:url(img/eLearning-Banner.jpg)">
+        
   
     </div>
    
@@ -82,16 +90,15 @@
       <div class="carousel-inner" style="width:100%">
       
         <div class="item active" >
-          <img src="http://placehold.it/760x400/cccccc/ffffff" >
+          <img src="img/news2.png" >
            <div class="carousel-caption">
-            <h4><a href="#">الزي الموحد
-</a></h4>
+            <h4><a href="#">الزي الموحد</a></h4>
             <p> زائنا الطلبة اشارة الى كتاب جهاز الأشراف والتقويم العلمي قسم الاشراف التربوي الخاص بالزي الموحد والذي يعتبر سمة الطالب وهويته الجامعية اذ ان تطبيقه له ابعاده التربوية والنفسية والحضارية في استقرار الحالة الدراسية والألتزام بالحشمة والوقار لكي تبقى <a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
           </div>
         </div><!-- End Item -->
  
          <div class="item">
-          <img src="http://placehold.it/760x400/999999/cccccc">
+          <img src="img/news1.png">
            <div class="carousel-caption">
             <h4><a href="#">ندوة علمية بخصوص حقيبة برمجية للأمتحان الألكتروني</a></h4>
             <p>اقيمت في كلية الرافدين الجامعة يوم الاثنين المصادف 16/3/2015 ندوة علمية حول تصميم حقيبة برمجية للأمتحان الالكترونيى وتضمنت الندوة عملية تنصيب وتشغيل وشرح البرنامج الى مجموعة من الاساتذة لمختلف اقسام <a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
@@ -99,7 +106,7 @@
         </div><!-- End Item -->
         
         <div class="item">
-          <img src="http://placehold.it/760x400/dddddd/333333">
+          <img src="img/news3.png">
            <div class="carousel-caption">
             <h4><a href="#">أطلاق وثائق الخريجيين</a></h4>
             <p> نظرا لأنتهاء العام الدراسي 2014-2015 حصلت موافقة وزارة التعليم العالي والبحث العلمي على اطلاق وتزويد الطلبة بوثائق التخرج للعام الدراسي المذكور اعلاه فعلى الطلبة الراغبين بالحصول على وثائق التخرج مراجعة مقر الكلية الرئيسي الكائن في شارع فلسطين
@@ -108,16 +115,16 @@
         </div><!-- End Item -->
         
         <div class="item">
-          <img src="http://placehold.it/760x400/999999/cccccc">
+          <img src="http://placehold.it/760x388/999999/cccccc">
            <div class="carousel-caption">
             <h4><a href="#">أعلان الى طلبة قسم هندسة تقنيات الحاسوب</a></h4>
             <p>الى طلبة المرحلة الثانية والثالثة لقسم هندسة تقنيات الحاسوب ( الدراسة الصباحية / محافظة بغداد ) مراجعة قسم التسجيل في دورة التدريب الصيفي لمدة شهر واحد ( الشهر السابع او الشهر الثامن ) كما مبين ادناه
-. <a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
+.           <a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
           </div>
         </div><!-- End Item -->
 
         <div class="item">
-          <img src="http://placehold.it/760x400/dddddd/333333">
+          <img src="http://placehold.it/760x388/dddddd/333333">
            <div class="carousel-caption">
             <h4><a href="#">الى طلبة طب الاسنان الغير مستوفين للتدريب الصيفي</a></h4>
             <p>الى طلبة قسم طب الاسنان الذين لم يحظروا للتدريب الصيفي والمدرجة اسمائهم ادناه مراجعة القسم بأسرع وقت ممكن , وفي حالة عدم مراجعة القسم واستيفاء التدريب الصيفي سوف يتم حجب وثائق التخرج لطلبة المرحلة الخامسة الى حين استيفاء التدريب الصيفي
@@ -152,13 +159,20 @@
        
    
 
-    <div class="container zerorightmargin zeropadding ">
+    <div id="wrraper-row" class="container zerorightmargin zeropadding ">
       <!-- Example row of columns -->
-      <div class="row zerorightmargin">
-      <div class="col-md-3 zeropadding">
+      <div id="wrapper-row" class="row zerorightmargin">
+      <div id="side-nav" class="col-md-3 zeropadding">
         <ul class="rightnav nav nav-pills nav-stacked withborder">
   <li role="presentation" class="active"><a href="#">الصفحة الرئيسية</a></li>
-  <li role="presentation"><a href="#">طب الاسنان</a></li>
+  <li role="presentation"><a href="#">طب الاسنان</a>
+      <ul class="submenu">
+          <li ><a  href="#">طب الاسنان</a></li>
+          <li><a  href="#">طب الاسنان</a></li>
+          <li><a  href="#">طب الاسنان</a></li>
+      </ul>
+  
+  </li>
   <li role="presentation"><a href="#">الصيدلة</a></li>
   <li role="presentation"><a href="#">هندسة تقنيات الحاسبات</a></li>
   <li role="presentation"><a href="#">هندسة الاتصالات</a></li>
@@ -174,26 +188,80 @@
 </ul>
 </div>
         
-        <div class="col-md-9">
-        
-        
-          <h2>محاضرات فيديوية</h2>
-          <div id="myElement">Loading the player...</div>
-<script type="text/javascript">
-var playerInstance = jwplayer("myElement");
-playerInstance.setup({
-	
-	
-    file: "http://content.jwplatform.com/videos/HBhTSDD4-o8PBpRIs.mp4",
-    image: "http://content.jwplatform.com/thumbs/HBhTSDD4-480.jpg",
-    width: 830,
-    height: 360,
-    title: 'Basic Video Embed',
-    description: 'A video with a basic title and description!'
-});
-</script>
-          
-        </div>
+          <div class="col-md-9" style="background-color: white;width: 850px;margin-top: 10px">
+            <div class="row">
+                <div class="col-md-12">
+                <h2>محاضرات فيديوية</h2>
+                <div id="myElement">جاري التحميل...</div>
+                  <script type="text/javascript">
+                  var playerInstance = jwplayer("myElement");
+                  playerInstance.setup({
+                      file: "http://content.jwplatform.com/videos/HBhTSDD4-o8PBpRIs.mp4",
+                      image: "http://content.jwplatform.com/thumbs/HBhTSDD4-480.jpg",
+                      width: 830,
+                      height: 415,//return to 360 to scale down th player
+                      title: 'Basic Video Embed',
+                      description: 'A video with a basic title and description!'
+                  });
+                  </script>
+                  <script>
+                    function loadVideo(myFile,myImage) { 
+                      playerInstance.load([{
+                        file: myFile,
+                        image: myImage
+                      }]);
+                      playerInstance.play();
+                    };
+                  </script>
+                </div><!-- of the jwplayer col-->
+                
+                
+            </div><!-- end of the main content row-->
+            
+            <div id="numbnails-list" class="row">
+                <div class="col-xs-6 col-md-3">
+                    <p>المحاضرة الاولى:
+                        انظمة التشغيل ذات المصدر المفتوح
+                  </p>
+                  <a href="javascript:loadVideo('file1.mp4','image1.jpg')" class="thumbnail">
+                    <img src="http://content.jwplatform.com/thumbs/HBhTSDD4-480.jpg" alt="...">
+                  </a>
+                </div>
+                <div class="col-xs-6 col-md-3 ">
+                    <p>
+                        المحاضرة الثالثة:
+                        اساسيات الذكاء الصناعي
+                    </p>
+                  <a href="javascript:loadVideo('file1.mp4','image1.jpg')" class="thumbnail">
+                    <img src="http://content.jwplatform.com/thumbs/HBhTSDD4-480.jpg" alt="...">
+                  </a>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                  <p>المحاضرة الثانية:
+                        شبكات الحاسوب
+                  </p>
+                  <a href="javascript:loadVideo('file1.mp4','image1.jpg')" class="thumbnail">
+                    <img src="http://content.jwplatform.com/thumbs/HBhTSDD4-480.jpg" alt="...">
+                  </a>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                  <p>المحاضرة الاولى: 
+                      البرمجة بلغة 
+                  سي شارب
+                  </p>
+                  
+                  <a href="javascript:loadVideo('file1.mp4','image1.jpg')" class="thumbnail">
+                    <img src="http://content.jwplatform.com/thumbs/HBhTSDD4-480.jpg" alt="...">
+                  </a>
+                </div>
+                           
+                
+            </div>
+            
+            
+            
+
+        </div><!-- end of the main content col-->
         
         
       </div>
@@ -202,7 +270,10 @@ playerInstance.setup({
 
       
     </div> <!-- /container -->  
-     </div>
+     
+      
+      
+      </div>
         
      
         <footer class="site-footer">

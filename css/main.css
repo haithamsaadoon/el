@@ -3,7 +3,29 @@
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+@font-face {
+  font-family: 'Droid Arabic Kufi';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/DroidKufi-Regular.eot);
+  src: 
+     
+       url(../fonts/DroidKufi-Regular.woff) format('woff'),
+       url(//localhost:8888/el2/fonts/DroidKufi-Regular.ttf) format('truetype');
+}
 
+
+
+
+
+
+
+
+body
+{   font-family: 'Droid Arabic Kufi', sans-serif;
+    background-color: #DAE3E7;
+    padding-top: 50px;
+}
 .zerorightmargin
 {margin-right:0px;
 }
@@ -23,7 +45,20 @@
 	border-top-right-radius:10px;
 	border-width:thin;
 		}
-
+#wrapper-row 
+{
+   
+   
+    
+}
+#side-nav
+{
+    background-color: #fff;
+    padding: 0px;
+    
+    
+}
+                
 .site-footer
 {
 	background: -webkit-linear-gradient(grey, black); /* For Safari 5.1 to 6.0 */
@@ -59,21 +94,101 @@
     
     
 }
-.rightnav li a
+.rightnav > li > a
 {
     transition: background-color 1.25s;
     transition: padding-right 1s;
     
 }
-.rightnav li a:hover
+.rightnav > li > a:hover
 {
     
     background-color: #CCC;
     padding-right:40px;
 }
-	
-	
+.submenu{
+    padding: 0px;
+    background-color: #fff;
+    list-style-type: none;
+    width:250px;
+    position: absolute;
+    top: 0;
+    left:-250px;
+    z-index: 100;}
+.submenu a{
+  padding: 10px;  
+  text-decoration: none;
+}
+.submenu li{
+    padding: 10px;  
+    text-decoration: none;
+    border-top: thin solid #CCC;
+    border-collapse: collapse;
+    transition: background-color 2s;
+    margin: 0px;
+    border-radius: 0px;
+}
 
+
+
+
+
+#numbnails-list .col-md-3
+{
+    padding: 0px;
+    width:209px;
+   
+    
+}
+
+#numbnails-list .col-md-3:first-child
+{
+    margin-right:  12px;
+    
+    
+}
+
+#numbnails-list .col-md-3
+{
+  overflow: hidden;
+      
+}
+
+#numbnails-list .col-md-3 a
+{
+    background-color: #000000;
+    position: absolute;
+    top:0;
+    left:0;
+    transition: all 1s;
+        
+    
+    
+}
+#numbnails-list .col-md-3 p
+{
+    color:white;
+    display: block;
+    width: 210px;
+    height:120px;
+    background-color: #354458;
+    margin: 0px;
+    padding: 10px;
+    
+    
+}
+
+#numbnails-list .col-md-3 a:hover
+{
+    opacity: 0.2;
+    transform: scale(1.2);
+    
+}
+.submenu
+{
+    
+    visibility: hidden;
+}
 
 
 
