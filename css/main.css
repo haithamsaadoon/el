@@ -183,11 +183,39 @@ body
 }
 
 
+#support
+{
+    position: fixed;display: block;
+    left:0;
+    top: 100px;
+    
+}
+#support a
+{
+     width: 65px;height: 60px;
+     overflow: hidden;
+     display: block;
+    
+}
 
+#support img
+{
+    width: 65px;height: 60px;
+    
+}
 
-
-
-
+#support a:hover
+{
+    overflow: visible;
+    width: 200px;
+    text-align: left;
+    
+}
+#support p
+{
+    
+    
+}
 
 
 
