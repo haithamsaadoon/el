@@ -138,7 +138,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         'Illuminate\Html\HtmlServiceProvider',
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-        
+        'JasperPHP\JasperPHPServiceProvider',
+
 
         /*
          * Application Service Providers...
