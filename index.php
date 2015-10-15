@@ -1,3 +1,17 @@
+<?php
+$alert="";
+if(isset($_GET["login"]))
+{
+    if($_GET["login"]=="false")
+        {
+        $alert='<div id="alert-div" class="alert alert-danger alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>تنبيه!</strong> اسم المستخدم او كلمة مرور غير صحيحة
+                , يرجى اعادة المحاولة
+              </div>';
+      }
+}
+?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -23,13 +37,15 @@
       <script>jwplayer.key="br0iERud1VlX4Kzcbo37wsO+tWfBBCtdkJT7sg==";</script>
       <script>
             $(document).ready(function(){
-                $(".sub").hover(function(){
-                   $(".submenu").css("visibility", "visible");}, function(){
-                    $(".submenu").css("visibility", "hidden");
+                $(".submenu").hover(function(){
+                    
+                   $(".submenu",this).css("visibility", "visible");}, function(){
+                   $(".submenu",this).css("visibility", "hidden");
                 });
                 $("li:has(ul)").hover(function(){
-                   $(".submenu").css("visibility", "visible");}, function(){
                     
+                    $(".submenu",this).css("visibility", "visible");}, function(){
+                    $(".submenu",this).css("visibility", "hidden");
                    
                 });
                 
@@ -69,11 +85,9 @@
         
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
-          <div id="alert-div" class="alert alert-danger alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <strong>تنبيه!</strong> اسم المستخدم او كلمة مرور غير صحيحة
-            , يرجى اعادة المحاولة
-          </div>
+         
+         <?php echo $alert; ?>
+          
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -86,12 +100,12 @@
            </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-left" role="form">
+            <form method="post" action="loginhandler.php" class="navbar-form navbar-left" role="form">
             <div class="form-group">
-              <input type="text" placeholder="الايميل" class="form-control">
+              <input name="username" type="text" placeholder="اسم المستخدم" class="form-control">
             </div>
             <div class="form-group">
-              <input type="password" placeholder="كلمة المرور" class="form-control">
+                <input type="password" name="password" placeholder="كلمة المرور" class="form-control">
             </div>
             <button type="submit" class="btn btn-success">تسجيل دخول</button>
           </form>
@@ -107,8 +121,6 @@
    
 </div>
 
-     
-    
     <!-- Carousal for the News -->
       <div class="container">
     	
@@ -203,7 +215,25 @@
       </ul>
   
   </li>
-  <li role="presentation"><a href="#">الصيدلة</a></li>
+  <li role="presentation"><a href="#">الصيدلة</a>
+  
+  
+  
+        <ul class="submenu">
+          <li ><a  href="class.html">المرحلة الاولى</a></li>
+          <li><a  href="class.html">المرحلة الثانية</a></li>
+          <li><a  href="class.html">المرحلة الثالثة</a></li>
+          <li><a  href="class.html">المرحلة الرابعة</a></li>
+
+      </ul>
+  
+  
+  
+  
+  
+  
+  
+  </li>
   <li role="presentation"><a href="#">هندسة تقنيات الحاسبات</a></li>
   <li role="presentation"><a href="#">هندسة الاتصالات</a></li>
   <li role="presentation"><a href="#">هندسة تبريد</a></li>
@@ -333,6 +363,8 @@
         </footer>
 
         <script src="js/vendor/bootstrap.min.js"></script>
+
+       
         <script src="js/main.js"></script>
         <script src="js/carousal.js"></script>
       
