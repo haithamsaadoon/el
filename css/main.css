@@ -13,7 +13,9 @@
        url(../fonts/DroidKufi-Regular.woff) format('woff'),
        url(//localhost:8888/el2/fonts/DroidKufi-Regular.ttf) format('truetype');
 }
-
+body
+{   font-family: 'Droid Arabic Kufi', sans-serif;
+   
 
     padding-top: 50px;
 }
