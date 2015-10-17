@@ -114,8 +114,14 @@ if(isset($_GET["login"]))
     </nav>
 <div class="container">
 
-    <div style="width:100%; background-color:#F00;height:245px;	background-image:url(img/eLearning-Banner.jpg)">
-        
+    <div style="width:100%; background-color:#F00;height:245px;	background-image:url(img/training.jpg)">
+        <h3 style="float: right;color: white;padding-right: 40px;padding-top: 50px;">
+             نظام التعليم الأليكتروني متاح اينما تكون
+</h3>
+        <h3 style="float: left;color: white;padding-left: 40px;padding-top:50px;">
+            
+            eLearning is available where you are 
+        </h3>
   
     </div>
    

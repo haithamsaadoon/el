@@ -11,7 +11,7 @@ $username=  mysql_real_escape_string($_POST["username"]);
 $password=  md5(mysql_real_escape_string($_POST["password"]));
 mysqli_query($conn,"SET NAMES 'utf8'");
 
-$sql = "SELECT use_name, use_password,use_permission FROM users where use_name='$username' and use_password='$password'";
+$sql = "SELECT use_username, use_password,use_permission FROM users where use_username='$username' and use_password='$password'";
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
     $row=  mysqli_fetch_assoc($result);

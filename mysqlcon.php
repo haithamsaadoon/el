@@ -12,5 +12,5 @@ if (!$conn) {
 }
 mysqli_query($conn,"SET NAMES 'utf8'");
 
-mysqli_query($conn,"use el2") or die(mysql_error());
+mysqli_query($conn,"use el") or die(mysql_error());
 ?>
