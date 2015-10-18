@@ -156,33 +156,78 @@
                     </div>
                 </div>
                 <!-- /.row -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <form role="form" class="form-inline">
-                            <div class="form-group">
-                                <label for="first">الأسم الاول:</label>
-                                <input type="text" class="form-control" id="first">
-                              </div>
-                            <div class="form-group">
-                                <label for="second">الأسم الثاني:</label>
-                                <input type="text" class="form-control" id="second">
-                            </div>
-                            <div class="form-group">
-                                <label for="last">الأسم الثالث:</label>
-                                <input type="text" class="form-control" id="last">
-                            </div>
-                              <select class="form-control">
-                                <?php
-                                require '';
-                                ?>
-                              </select>
-                              <button type="submit" class="btn btn-default">اضافة</button>
+                 <form role="form" class="form-inline">
+                    <div class="row">
+
+                        <div class="col-lg-12">
                         
-                        </form>
-                        
+                                    <div class="input-group">
+                                        <span class="input-group-addon">1</span>
+                                        <input type="text" class="form-control" id="first" placeholder="الأسم الاول">
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">2</span>
+                                        <input type="text" class="form-control" id="second" placeholder="الأسم الثاني">
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">3</span>
+                                        <input type="text" class="form-control" id="last" placeholder="الأسم الثالث">
+                                    </div>
+                            <br/>
+                            <br/>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                        <input type="text" class="form-control" id="first" placeholder="اسم المستخدم">
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+
+                                        <input type="text" class="form-control" id="second" placeholder="كلمة المرور">
+                                    </div>
+                            
+                            <br/>
+                            <br/>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-education"></span></span>
+                                        <select class="form-control">
+                                            <option value="">اختر القسم</option>
+                                            <?php
+                                            require '../phpfiles/selectdep.php';
+                                            ?>
+                                        </select>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-education"></span></span>
+                                        <select class="form-control">
+                                            <option value="">اختر المرحلة</option>
+                                            <option value="1">المرحلة الأولى</option>
+                                            <option value="1">المرحلة الثانية</option>
+                                            <option value="1">المرحلة الثالثة</option>
+                                            <option value="1">المرحلة الرابعة</option>
+                                            <option value="1">المرحلة الخامسة</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-education"></span></span>
+                                        <select class="form-control">
+                                            <option value="">اختر الدور</option>
+                                            <option value="prof">استاذ</option>
+                                            <option value="student">طالب </option>
+                                            <option value="admin">مدير موقع</option>
+                                        </select>
+                                    </div>
+                            <br/>
+                            <br/>
+                            
+                                  
+                                  <button type="submit" class="btn btn-default">اضافة</button>
+                       
+                        </div>
+
+
                     </div>
-                    
-                </div>
+                     
+                </form>   
                     
                 <div class="row">
                    
