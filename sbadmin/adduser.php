@@ -25,7 +25,8 @@
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
+    <link href="bower_components/DataTables/media/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
+    <link href="bower_components/DataTables/media/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -234,17 +235,17 @@
                     <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Transactions Panel</h3>
+                                <h3 class="panel-title"><i class="fa fa-users"></i> أسماء المستخدمين</h3>
                             </div>
                             <div class="panel-body">
                                 <div class="table-responsive">
-                                    <table class="table table-bordered table-hover table-striped">
+                                    <table id="users-table" class="table table-bordered table-hover table-striped">
                                         <thead>
                                             <tr>
-                                                <th>Order #</th>
-                                                <th>Order Date</th>
-                                                <th>Order Time</th>
-                                                <th>Amount (USD)</th>
+                                                <th>الرقم الرمزي</th>
+                                                <th>الاسم</th>
+                                                <th>الوظيفة</th>
+                                                <th>القسم</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -327,7 +328,12 @@
     <script src="js/plugins/morris/raphael.min.js"></script>
     <script src="js/plugins/morris/morris.min.js"></script>
     <script src="js/plugins/morris/morris-data.js"></script>
-
+    <script src="bower_components/DataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="bower_components/DataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+    <script>
+    
+    $('#users-table').DataTable();
+    </script>
 </body>
 
 </html>
