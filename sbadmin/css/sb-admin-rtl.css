@@ -12,7 +12,7 @@
   src: 
      
        url(../fonts/DroidKufi-Regular.woff) format('woff'),
-       url(//localhost/el2/fonts/DroidKufi-Regular.ttf) format('truetype');
+       url(//localhost:8888/el2/fonts/DroidKufi-Regular.ttf) format('truetype');
 }
 
 body
