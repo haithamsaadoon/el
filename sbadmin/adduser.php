@@ -238,7 +238,7 @@
                                 <h3 class="panel-title"><i class="fa fa-users"></i> أسماء المستخدمين</h3>
                             </div>
                             <div class="panel-body">
-                                <div class="table-responsive">
+                                <div class="table-responsive" style="overflow: hidden">
                                     <table id="users-table" class="table table-bordered table-hover table-striped">
                                         <thead>
                                             <tr>
