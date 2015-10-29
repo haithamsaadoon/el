@@ -330,6 +330,7 @@
     <script src="js/plugins/morris/morris-data.js"></script>
     <script src="bower_components/DataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
     <script src="bower_components/DataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+    
     <script>
     
     $('#users-table').DataTable();
