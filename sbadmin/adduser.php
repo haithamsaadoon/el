@@ -1,3 +1,25 @@
+<?php
+$note="";
+if(isset($_GET['error']))
+{
+    switch ($_GET['error'])
+    {
+        case "success":
+           $note ='<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>تم!</strong> تمت عملية اضافة مستخدم جديد بنجاح.</div>';
+            break;
+        case "failed":
+            $note='<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <strong>خطأ!</strong> حدث خلل عند ادخال البيانات, يرجى اعادة المحاولة بشكل صحيح </div>';
+            break;
+        default :
+            $note ="";
+            break;
+            
+    }
+    
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +30,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin Page</title>
+    <title>Admin Page </title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -154,43 +176,44 @@
                                 اضافة مستخدم
                             </li>
                         </ol>
+                       <?php echo $note;?>
                     </div>
                 </div>
                 <!-- /.row -->
-                 <form role="form" class="form-inline">
+                <form role="form" class="form-inline" method="post" action="adduserhandler.php">
                     <div class="row">
 
                         <div class="col-lg-12">
                         
                                     <div class="input-group">
                                         <span class="input-group-addon">1</span>
-                                        <input type="text" class="form-control" id="first" placeholder="الأسم الاول">
+                                        <input name="first" type="text" class="form-control" id="first" placeholder="الأسم الاول">
                                     </div>
                                     <div class="input-group">
                                         <span class="input-group-addon">2</span>
-                                        <input type="text" class="form-control" id="second" placeholder="الأسم الثاني">
+                                        <input name="second" type="text" class="form-control" id="second" placeholder="الأسم الثاني">
                                     </div>
                                     <div class="input-group">
                                         <span class="input-group-addon">3</span>
-                                        <input type="text" class="form-control" id="last" placeholder="الأسم الثالث">
+                                        <input name="third" type="text" class="form-control" id="last" placeholder="الأسم الثالث">
                                     </div>
                             <br/>
                             <br/>
                                     <div class="input-group">
                                         <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                                        <input type="text" class="form-control" id="first" placeholder="اسم المستخدم">
+                                        <input name="use_username" type="text" class="form-control" id="first" placeholder="اسم المستخدم">
                                     </div>
                                     <div class="input-group">
                                         <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
 
-                                        <input type="text" class="form-control" id="second" placeholder="كلمة المرور">
+                                        <input name="use_password" type="password" class="form-control" id="second" placeholder="كلمة المرور">
                                     </div>
                             
                             <br/>
                             <br/>
                                     <div class="input-group">
                                         <span class="input-group-addon"><span class="glyphicon glyphicon-education"></span></span>
-                                        <select class="form-control">
+                                        <select name="dep_id" class="form-control">
                                             <option value="">اختر القسم</option>
                                             <?php
                                             require '../phpfiles/selectdep.php';
@@ -199,7 +222,7 @@
                                     </div>
                                     <div class="input-group">
                                         <span class="input-group-addon"><span class="glyphicon glyphicon-education"></span></span>
-                                        <select class="form-control">
+                                        <select name="stage" class="form-control">
                                             <option value="">اختر المرحلة</option>
                                             <option value="1">المرحلة الأولى</option>
                                             <option value="1">المرحلة الثانية</option>
@@ -210,7 +233,7 @@
                                     </div>
                                     <div class="input-group">
                                         <span class="input-group-addon"><span class="glyphicon glyphicon-education"></span></span>
-                                        <select class="form-control">
+                                        <select name="role" class="form-control" >
                                             <option value="">اختر الدور</option>
                                             <option value="prof">استاذ</option>
                                             <option value="student">طالب </option>
@@ -242,62 +265,17 @@
                                     <table id="users-table" class="table table-bordered table-hover table-striped">
                                         <thead>
                                             <tr>
-                                                <th>الرقم الرمزي</th>
+                                                <th>الرقم الرمزي 
+                                                    <br/>
+                                                       
+                                                    (لحذف المستخدم) </th>
                                                 <th>الاسم</th>
                                                 <th>الوظيفة</th>
                                                 <th>القسم</th>
+                                                
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>3326</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:29 PM</td>
-                                                <td>$321.33</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3325</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:20 PM</td>
-                                                <td>$234.34</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3324</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:03 PM</td>
-                                                <td>$724.17</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3323</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:00 PM</td>
-                                                <td>$23.71</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3322</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:49 PM</td>
-                                                <td>$8345.23</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3321</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:23 PM</td>
-                                                <td>$245.12</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3320</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:15 PM</td>
-                                                <td>$5663.54</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3319</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:13 PM</td>
-                                                <td>$943.45</td>
-                                            </tr>
-                                        </tbody>
+                                        
                                     </table>
                                 </div>
                                 <div class="text-right">
@@ -333,7 +311,23 @@
     
     <script>
     
-    $('#users-table').DataTable();
+    $('#users-table').DataTable( {
+        "ajax": {"url":"../phpfiles/usersjson.php","datatype":"jsonp"},
+        
+        "columnDefs": [ {
+                    "targets": 0,
+                    
+                    "render": function ( data, type, full, meta ) {
+                      return '<a href="'+'deleteuser.php?id='+data+'">'+data+'</a>';
+                    }
+                  } ]
+        
+        
+        
+        
+        
+    } );
+    
     </script>
 </body>
 
