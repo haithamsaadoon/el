@@ -10,6 +10,16 @@ if(isset($_GET['error']))
         case "failed":
             $note='<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <strong>خطأ!</strong> حدث خلل عند ادخال البيانات, يرجى اعادة المحاولة بشكل صحيح </div>';
             break;
+        case "deleted":
+           $note ='<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>تم!</strong> تم حذف المستخدم.</div>';
+            break;
+        case "failed":
+            $note='<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <strong>خطأ!</strong> حدث خلل عند حذف المستخدم, يرجى اعادة المحاولة بشكل صحيح </div>';
+            break;
+        
+        
+        
+        
         default :
             $note ="";
             break;
