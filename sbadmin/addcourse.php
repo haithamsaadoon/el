@@ -170,14 +170,14 @@ if(isset($_GET['error']))
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            أضافة مستخدم جديد
+                            أضافة كورس جديد
                         </h1>
                         <ol class="breadcrumb">
                             <li class="active">
                                 <i class="fa fa-dashboard"></i>
                                 لوحة التحكم \
                                 
-                                اضافة مستخدم
+                                اضافة كورس
                             </li>
                         </ol>
                        <?php echo $note;?>
@@ -336,4 +336,5 @@ if(isset($_GET['error']))
 </body>
 
 </html>
+
 
