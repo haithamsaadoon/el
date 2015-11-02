@@ -53,6 +53,8 @@ if(isset($_GET['error']))
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="bower_components/DataTables/media/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
     <link href="bower_components/DataTables/media/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="bower_components/bootstrap-fileinput/css/fileinput.min.css" rel="stylesheet" type="text/css"/>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -166,21 +168,18 @@ if(isset($_GET['error']))
                         
                                     <div class="input-group">
                                         <span class="input-group-addon">1</span>
-                                        <input name="title" type="text" class="form-control" id="first" placeholder="أسم الكورس">
+                                        <input name="coursename" type="text" class="form-control" id="first" placeholder="أسم الكورس">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="control-label">اختر ملف المحاضرات</label>
+                                       <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
+
+                                       <input name="coursefiles"  type="file" class="file">
                                     </div>
                                     
                             <br/>
                             <br/>
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                                        <input name="use_username" type="text" class="form-control" id="first" placeholder="اسم المستخدم">
-                                    </div>
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-
-                                        <input name="use_password" type="password" class="form-control" id="second" placeholder="كلمة المرور">
-                                    </div>
-                            
+                                  
                             <br/>
                             <br/>
                                     <div class="input-group">
@@ -205,11 +204,12 @@ if(isset($_GET['error']))
                                     </div>
                                     <div class="input-group">
                                         <span class="input-group-addon"><span class="glyphicon glyphicon-education"></span></span>
-                                        <select name="role" class="form-control" >
-                                            <option value="">اختر الدور</option>
-                                            <option value="prof">استاذ</option>
-                                            <option value="student">طالب </option>
-                                            <option value="admin">مدير موقع</option>
+                                        <select name="prof_id" class="form-control" >
+                                            <option value="">اختر الاستاذ</option>
+                                            <?php
+                                                require '../phpfiles/selectprof.php';
+                                            
+                                            ?>
                                         </select>
                                     </div>
                             <br/>
@@ -280,7 +280,7 @@ if(isset($_GET['error']))
     <script src="js/plugins/morris/morris-data.js"></script>
     <script src="bower_components/DataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
     <script src="bower_components/DataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
-    
+    <script src="bower_components/bootstrap-fileinput/js/fileinput.min.js" type="text/javascript"></script>
     <script>
     
     $('#users-table').DataTable( {
