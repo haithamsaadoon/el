@@ -131,32 +131,7 @@ if(isset($_GET['error']))
                     <li>
                         <a href="addcourse.php"><i class="fa fa-fw fa-book"></i> ادارة الكورسات</a>
                     </li>
-                    <li>
-                        <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
-                    </li>
-                    <li>
-                        <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
-                    </li>
-                    <li>
-                        <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo" class="collapse">
-                            <li>
-                                <a href="#">Dropdown Item</a>
-                            </li>
-                            <li>
-                                <a href="#">Dropdown Item</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-                    </li>
-                    <li class="active">
-                        <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
-                    </li>
+                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -184,23 +159,16 @@ if(isset($_GET['error']))
                     </div>
                 </div>
                 <!-- /.row -->
-                <form role="form" class="form-inline" method="post" action="adduserhandler.php">
+                <form role="form" class="form-inline" method="post" action="addcoursehandler.php" enctype="multipart/form-data">
                     <div class="row">
 
                         <div class="col-lg-12">
                         
                                     <div class="input-group">
                                         <span class="input-group-addon">1</span>
-                                        <input name="first" type="text" class="form-control" id="first" placeholder="الأسم الاول">
+                                        <input name="title" type="text" class="form-control" id="first" placeholder="أسم الكورس">
                                     </div>
-                                    <div class="input-group">
-                                        <span class="input-group-addon">2</span>
-                                        <input name="second" type="text" class="form-control" id="second" placeholder="الأسم الثاني">
-                                    </div>
-                                    <div class="input-group">
-                                        <span class="input-group-addon">3</span>
-                                        <input name="third" type="text" class="form-control" id="last" placeholder="الأسم الثالث">
-                                    </div>
+                                    
                             <br/>
                             <br/>
                                     <div class="input-group">
