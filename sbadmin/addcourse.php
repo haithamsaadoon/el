@@ -174,7 +174,7 @@ if(isset($_GET['error']))
                                         <label class="control-label">اختر ملف المحاضرات</label>
                                        <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
 
-                                       <input name="coursefiles"  type="file" class="file">
+                                       <input name="coursefile"  type="file" >
                                     </div>
                                     
                             <br/>
@@ -196,10 +196,10 @@ if(isset($_GET['error']))
                                         <select name="stage" class="form-control">
                                             <option value="">اختر المرحلة</option>
                                             <option value="1">المرحلة الأولى</option>
-                                            <option value="1">المرحلة الثانية</option>
-                                            <option value="1">المرحلة الثالثة</option>
-                                            <option value="1">المرحلة الرابعة</option>
-                                            <option value="1">المرحلة الخامسة</option>
+                                            <option value="2">المرحلة الثانية</option>
+                                            <option value="3">المرحلة الثالثة</option>
+                                            <option value="4">المرحلة الرابعة</option>
+                                            <option value="5">المرحلة الخامسة</option>
                                         </select>
                                     </div>
                                     <div class="input-group">
