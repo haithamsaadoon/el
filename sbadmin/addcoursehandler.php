@@ -9,12 +9,12 @@ $fileType = $_FILES['coursefile']['type'];
 
 $fp      = fopen($tmpName, 'r');
 $content = fread($fp, filesize($tmpName));
-//$content = addslashes($content);
+$content = mysql_real_escape_string($fileName);
 fclose($fp);
 
 if(!get_magic_quotes_gpc())
 {
-   // $fileName = addslashes($fileName);
+    $fileName = mysql_real_escape_string($fileName);
 }
 require '../mysqlcon.php';
 

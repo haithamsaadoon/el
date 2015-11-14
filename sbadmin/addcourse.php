@@ -230,7 +230,7 @@ if(isset($_GET['error']))
                     <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-users"></i> أسماء المستخدمين</h3>
+                                <h3 class="panel-title"><i class="fa fa-users"></i> أسماء الكورسات</h3>
                             </div>
                             <div class="panel-body">
                                 <div class="table-responsive" style="overflow: hidden">
@@ -240,10 +240,10 @@ if(isset($_GET['error']))
                                                 <th>الرقم الرمزي 
                                                     <br/>
                                                        
-                                                    (لحذف المستخدم) </th>
-                                                <th>الاسم</th>
-                                                <th>الوظيفة</th>
+                                                    (لحذف الكورس )</th>
+                                                <th>اسم الكورس</th>
                                                 <th>القسم</th>
+                                                <th>المرحلة</th>
                                                 
                                             </tr>
                                         </thead>
@@ -284,7 +284,7 @@ if(isset($_GET['error']))
     <script>
     
     $('#users-table').DataTable( {
-        "ajax": {"url":"../phpfiles/usersjson.php","datatype":"jsonp"},
+        "ajax": {"url":"../phpfiles/coursesjson.php","datatype":"jsonp"},
         
         "columnDefs": [ {
                     "targets": 0,
