@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.3.11
+-- version 4.4.14
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 18, 2015 at 12:24 AM
--- Server version: 5.6.24
--- PHP Version: 5.6.8
+-- Generation Time: Nov 15, 2015 at 11:59 AM
+-- Server version: 5.6.26
+-- PHP Version: 5.6.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,13 +14,11 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `el`
 --
-CREATE DATABASE IF NOT EXISTS `el` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `el`;
 
 -- --------------------------------------------------------
 
@@ -34,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `courses` (
   `cou_stage` int(11) NOT NULL,
   `cou_name` varchar(50) NOT NULL,
   `cou_prof` int(11) NOT NULL,
-  `cou_pdf` blob NOT NULL
+  `cou_pdf` longblob NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -47,7 +45,25 @@ CREATE TABLE IF NOT EXISTS `departments` (
   `dep_id` int(11) NOT NULL,
   `dep_name` varchar(50) NOT NULL,
   `dep_stages` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `departments`
+--
+
+INSERT INTO `departments` (`dep_id`, `dep_name`, `dep_stages`) VALUES
+(1, 'طب الاسنان', 5),
+(2, 'الصيدلة', 5),
+(3, 'هندسة تقنيات الحاسبات', 4),
+(6, 'هندسة الأتصالات', 4),
+(7, 'هندسة تبريد', 4),
+(8, 'هندسة معمارية', 5),
+(9, 'هندسة برمجيات', 4),
+(10, 'علوم حاسبات', 4),
+(11, 'القانون', 4),
+(12, 'الاحصاء', 4),
+(13, 'أدارة الاعمال', 4),
+(14, 'علوم المحاسبة', 4);
 
 -- --------------------------------------------------------
 
@@ -65,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `use_permission` varchar(10) NOT NULL,
   `use_dep_id` int(11) NOT NULL DEFAULT '0',
   `use_stage` int(11) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`
@@ -109,12 +125,12 @@ ALTER TABLE `courses`
 -- AUTO_INCREMENT for table `departments`
 --
 ALTER TABLE `departments`
-  MODIFY `dep_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `dep_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `use_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `use_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
