@@ -5,16 +5,16 @@ if(isset($_GET['error']))
     switch ($_GET['error'])
     {
         case "success":
-           $note ='<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>تم!</strong> تمت عملية اضافة مستخدم جديد بنجاح.</div>';
+           $note ='<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>تم!</strong> تمت عملية اضافة كورس جديد بنجاح.</div>';
             break;
         case "failed":
             $note='<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <strong>خطأ!</strong> حدث خلل عند ادخال البيانات, يرجى اعادة المحاولة بشكل صحيح </div>';
             break;
         case "deleted":
-           $note ='<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>تم!</strong> تم حذف المستخدم.</div>';
+           $note ='<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>تم!</strong> تم حذف الكورس.</div>';
             break;
-        case "failed":
-            $note='<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <strong>خطأ!</strong> حدث خلل عند حذف المستخدم, يرجى اعادة المحاولة بشكل صحيح </div>';
+        case "undeleted":
+            $note='<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <strong>خطأ!</strong> حدث خلل عند حذف الكورس, يرجى اعادة المحاولة بشكل صحيح </div>';
             break;
         default :
             $note ="";
@@ -290,7 +290,7 @@ if(isset($_GET['error']))
                     "targets": 0,
                     
                     "render": function ( data, type, full, meta ) {
-                      return '<a href="'+'deleteuser.php?id='+data+'">'+data+'</a>';
+                      return '<a href="'+'deletecourse.php?id='+data+'">'+data+'</a>';
                     }
                   } ]
         

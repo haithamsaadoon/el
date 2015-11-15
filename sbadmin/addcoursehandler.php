@@ -21,9 +21,15 @@ require '../mysqlcon.php';
 $query = "INSERT INTO courses (cou_dep_id,cou_name,cou_pdf_content,cou_pdf_size,cou_prof_id,cou_stage)".
 "VALUES ('$dep_id','$coursename','$content','$fileSize','$prof_id','$stage')";
 
-mysqli_query($conn,$query) or die(mysqli_error($conn)); 
+if (mysqli_query($conn,$query) ) {
+    header("location: addcourse.php?error=success");
+} else {
+    header("location: addcourse.php?error=failed");
+}
 
-echo "<br>File $fileName uploaded<br>";
+mysqli_close($conn);
+
+
 } 
 ?>
 

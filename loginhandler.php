@@ -1,11 +1,4 @@
 <?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 require_once './mysqlcon.php';
 $username=  mysql_real_escape_string($_POST["username"]);
 $password=  md5(mysql_real_escape_string($_POST["password"]));
@@ -36,6 +29,6 @@ if (mysqli_num_rows($result) > 0) {
     
 }
 else
-{  header("location: admin.php");
+{  header("location: index.php?login=false");
     }
 

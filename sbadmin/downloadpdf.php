@@ -1,6 +1,5 @@
 <?php
 require '../mysqlcon.php';
-
 $id    = $_GET['id'];
 $query = "SELECT cou_name,cou_pdf_size,cou_pdf_content FROM courses where cou_id=$id";
 $result = mysqli_query($conn,$query) or die(mysql_error());
