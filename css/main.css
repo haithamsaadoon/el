@@ -1,7 +1,7 @@
 
 
 /* ==========================================================================
-   Author's custom styles
+   Haitham's custom styles
    ========================================================================== */
 @font-face {
   font-family: 'Droid Arabic Kufi';
@@ -15,7 +15,7 @@
 }
 body
 {   font-family: 'Droid Arabic Kufi', sans-serif;
-   
+    background-color:#cccccc;
 
     padding-top: 50px;
 }

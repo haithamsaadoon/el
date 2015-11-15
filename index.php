@@ -202,56 +202,18 @@ if(isset($_GET["login"]))
       </div>
 
     </div><!-- End Carousel -->
-       
-   
-
+    
     <div id="wrraper-row" class="container zerorightmargin zeropadding ">
       <!-- Example row of columns -->
       <div id="wrapper-row" class="row zerorightmargin">
       <div id="side-nav" class="col-md-3 zeropadding">
         <ul class="rightnav nav nav-pills nav-stacked withborder">
-  <li role="presentation" class="active"><a href="#">الصفحة الرئيسية</a></li>
-  <li role="presentation"><a href="#">طب الاسنان</a>
-      <ul class="submenu">
-          <li ><a  href="class.html">المرحلة الاولى</a></li>
-          <li><a  href="class.html">المرحلة الثانية</a></li>
-          <li><a  href="class.html">المرحلة الثالثة</a></li>
-          <li><a  href="class.html">المرحلة الرابعة</a></li>
+    <li role="presentation" class="active"><a href="#">الصفحة الرئيسية</a></li>
+   <?php
+   require_once './phpfiles/ullideps.php';
+   ?>
 
-      </ul>
-  
-  </li>
-  <li role="presentation"><a href="#">الصيدلة</a>
-  
-  
-  
-        <ul class="submenu">
-          <li ><a  href="class.html">المرحلة الاولى</a></li>
-          <li><a  href="class.html">المرحلة الثانية</a></li>
-          <li><a  href="class.html">المرحلة الثالثة</a></li>
-          <li><a  href="class.html">المرحلة الرابعة</a></li>
-
-      </ul>
-  
-  
-  
-  
-  
-  
-  
-  </li>
-  <li role="presentation"><a href="#">هندسة تقنيات الحاسبات</a></li>
-  <li role="presentation"><a href="#">هندسة الاتصالات</a></li>
-  <li role="presentation"><a href="#">هندسة تبريد</a></li>
-  <li role="presentation"><a href="#">هندسة معمارية</a></li>
-  <li role="presentation"><a href="#">هندسة برمجيات</a></li>
-  <li role="presentation"><a href="#">علوم حاسبات</a></li>
-  <li role="presentation"><a href="#">القانون</a></li>
-  <li role="presentation"><a href="#">الأحصاء</a></li>
-  <li role="presentation"><a href="#">أدارة الاعمال</a></li>
-  <li role="presentation"><a href="#">علوم المحاسبة</a></li>
-
-</ul>
+  </ul>
 </div>
         
           <div class="col-md-9" style="background-color: white;width: 850px;margin-top: 10px">
