@@ -10,17 +10,21 @@ $fileType = $_FILES['coursefile']['type'];
 
 $fp      = fopen($tmpName, 'r');
 $content = fread($fp, filesize($tmpName));
-$content = mysql_real_escape_string($fileName);
-fclose($fp);
+$content = mysql_real_escape_string($content);
 
+fclose($fp);
 if(!get_magic_quotes_gpc())
 {
-    $fileName = mysql_real_escape_string($fileName);
+   $fileName = mysql_real_escape_string($fileName);
 }
 require '../mysqlcon.php';
 
 $query = "INSERT INTO courses (cou_dep_id,cou_name,cou_pdf_content,cou_pdf_size,cou_prof_id,cou_stage)".
 "VALUES ('$dep_id','$coursename','$content','$fileSize','$prof_id','$stage')";
+
+
+mysqli_query($conn,$query) or die(mysqli_error($conn));
+
 if (mysqli_query($conn,$query) ) {
     header("location: addcourse.php?error=success");
 } else {

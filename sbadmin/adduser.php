@@ -126,10 +126,14 @@ if(isset($_GET['error']))
                         <a href="#"><i class="fa fa-fw fa-dashboard"></i> لوحة التحكم</a>
                     </li>
                     <li>
-                        <a href="adduser.php"><i class="fa fa-fw fa-plus-circle"></i> اضافة مسنخدم</a>
+                        <a href="adduser.php"><i class="fa fa-fw fa-plus-circle"></i> اضافة مستخدم</a>
                     </li>
+                    
                     <li>
                         <a href="addcourse.php"><i class="fa fa-fw fa-book"></i> ادارة الكورسات</a>
+                    </li>
+                    <li>
+                        <a href="addnews.php"><i class="fa fa-fw fa-plus-circle"></i>أضافة اخبار</a>
                     </li>
                     
                 </ul>
