@@ -264,7 +264,7 @@ if(isset($_GET['error']))
     <script>
     
     $('#users-table').DataTable( {
-        "ajax": {"url":"../phpfiles/usersjson.php","datatype":"jsonp"},
+        "ajax": {"url":"../phpfiles/newsjson.php","datatype":"jsonp"},
         
         "columnDefs": [ {
                     "targets": 0,
