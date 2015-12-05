@@ -5,16 +5,16 @@ if(isset($_GET['error']))
     switch ($_GET['error'])
     {
         case "success":
-           $note ='<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>تم!</strong> تمت عملية اضافة مستخدم جديد بنجاح.</div>';
+           $note ='<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>تم!</strong> تمت عملية اضافة الخبر جديد بنجاح.</div>';
             break;
         case "failed":
             $note='<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <strong>خطأ!</strong> حدث خلل عند ادخال البيانات, يرجى اعادة المحاولة بشكل صحيح </div>';
             break;
         case "deleted":
-           $note ='<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>تم!</strong> تم حذف المستخدم.</div>';
+           $note ='<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>تم!</strong> تم حذف الخبر.</div>';
             break;
         case "failed":
-            $note='<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <strong>خطأ!</strong> حدث خلل عند حذف المستخدم, يرجى اعادة المحاولة بشكل صحيح </div>';
+            $note='<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <strong>خطأ!</strong> حدث خلل عند حذف الخبر, يرجى اعادة المحاولة بشكل صحيح </div>';
             break;
         default :
             $note ="";
@@ -220,19 +220,17 @@ if(isset($_GET['error']))
                                                 <th>الرقم الرمزي 
                                                     <br/>
                                                        
-                                                    (لحذف المستخدم) </th>
-                                                <th>الاسم</th>
-                                                <th>الوظيفة</th>
-                                                <th>القسم</th>
+                                                    (لحذف  الخبر ) </th>
+                                                <th>عنوان الخبر</th>
+                                                <th>موجز الخبر</th>
+                                                <th>التاريخ</th>
                                                 
                                             </tr>
                                         </thead>
                                         
                                     </table>
                                 </div>
-                                <div class="text-right">
-                                    <a href="#">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -270,7 +268,7 @@ if(isset($_GET['error']))
                     "targets": 0,
                     
                     "render": function ( data, type, full, meta ) {
-                      return '<a href="'+'deleteuser.php?id='+data+'">'+data+'</a>';
+                      return '<a href="'+'deletenews.php?id='+data+'">'+data+'</a>';
                     }
                   } ]
         

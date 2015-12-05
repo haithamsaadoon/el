@@ -128,82 +128,11 @@ if(isset($_GET["login"]))
 </div>
 
     <!-- Carousal for the News -->
-      <div class="container">
-    	
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <?php 
+    require 'phpfiles/newscarousal.php'; 
     
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" style="width:100%">
-      
-        <div class="item active" >
-          <img src="img/news2.png" >
-           <div class="carousel-caption">
-            <h4><a href="#">الزي الموحد</a></h4>
-            <p> زائنا الطلبة اشارة الى كتاب جهاز الأشراف والتقويم العلمي قسم الاشراف التربوي الخاص بالزي الموحد والذي يعتبر سمة الطالب وهويته الجامعية اذ ان تطبيقه له ابعاده التربوية والنفسية والحضارية في استقرار الحالة الدراسية والألتزام بالحشمة والوقار لكي تبقى <a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
-          </div>
-        </div><!-- End Item -->
- 
-         <div class="item">
-          <img src="img/news1.png">
-           <div class="carousel-caption">
-            <h4><a href="#">ندوة علمية بخصوص حقيبة برمجية للأمتحان الألكتروني</a></h4>
-            <p>اقيمت في كلية الرافدين الجامعة يوم الاثنين المصادف 16/3/2015 ندوة علمية حول تصميم حقيبة برمجية للأمتحان الالكترونيى وتضمنت الندوة عملية تنصيب وتشغيل وشرح البرنامج الى مجموعة من الاساتذة لمختلف اقسام <a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
-          </div>
-        </div><!-- End Item -->
-        
-        <div class="item">
-          <img src="img/news3.png">
-           <div class="carousel-caption">
-            <h4><a href="#">أطلاق وثائق الخريجيين</a></h4>
-            <p> نظرا لأنتهاء العام الدراسي 2014-2015 حصلت موافقة وزارة التعليم العالي والبحث العلمي على اطلاق وتزويد الطلبة بوثائق التخرج للعام الدراسي المذكور اعلاه فعلى الطلبة الراغبين بالحصول على وثائق التخرج مراجعة مقر الكلية الرئيسي الكائن في شارع فلسطين
-<a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
-          </div>
-        </div><!-- End Item -->
-        
-        <div class="item">
-          <img src="http://placehold.it/760x388/999999/cccccc">
-           <div class="carousel-caption">
-            <h4><a href="#">أعلان الى طلبة قسم هندسة تقنيات الحاسوب</a></h4>
-            <p>الى طلبة المرحلة الثانية والثالثة لقسم هندسة تقنيات الحاسوب ( الدراسة الصباحية / محافظة بغداد ) مراجعة قسم التسجيل في دورة التدريب الصيفي لمدة شهر واحد ( الشهر السابع او الشهر الثامن ) كما مبين ادناه
-.           <a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
-          </div>
-        </div><!-- End Item -->
-
-        <div class="item">
-          <img src="http://placehold.it/760x388/dddddd/333333">
-           <div class="carousel-caption">
-            <h4><a href="#">الى طلبة طب الاسنان الغير مستوفين للتدريب الصيفي</a></h4>
-            <p>الى طلبة قسم طب الاسنان الذين لم يحظروا للتدريب الصيفي والمدرجة اسمائهم ادناه مراجعة القسم بأسرع وقت ممكن , وفي حالة عدم مراجعة القسم واستيفاء التدريب الصيفي سوف يتم حجب وثائق التخرج لطلبة المرحلة الخامسة الى حين استيفاء التدريب الصيفي
- <a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
-          </div>
-        </div><!-- End Item -->
-                
-      </div><!-- End Carousel Inner -->
-
-
-    <ul class="list-group col-sm-3">
-      <li data-target="#myCarousel" data-slide-to="0" class="list-group-item active"><h4>الزي الموحد
-</h4></li>
-      <li data-target="#myCarousel" data-slide-to="1" class="list-group-item"><h4>ندوة علمية بخصوص حقيبة برمجية للأمتحان الألكتروني</h4></li>
-      <li data-target="#myCarousel" data-slide-to="2" class="list-group-item"><h4>أطلاق وثائق الخريجيين</h4></li>
-      <li data-target="#myCarousel" data-slide-to="3" class="list-group-item"><h4>أعلان الى طلبة قسم هندسة تقنيات الحاسوب
-</h4></li>
-      <li data-target="#myCarousel" data-slide-to="4" class="list-group-item"><h4>الى طلبة طب الاسنان الغير مستوفين للتدريب الصيفي</h4></li>
-    </ul>
-
-      <!-- Controls -->
-      <div class="carousel-controls">
-          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-          </a>
-          <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-          </a>
-      </div>
-
-    </div><!-- End Carousel -->
-    
-    <div id="wrraper-row" class="container zerorightmargin zeropadding ">
+    ?>
+       <div id="wrraper-row" class="container zerorightmargin zeropadding ">
       <!-- Example row of columns -->
       <div id="wrapper-row" class="row zerorightmargin">
       <div id="side-nav" class="col-md-3 zeropadding">
@@ -301,8 +230,7 @@ if(isset($_GET["login"]))
      
       
       
-      </div>
-        
+      </div> 
      
         <footer class="site-footer">
         <div class="container">
