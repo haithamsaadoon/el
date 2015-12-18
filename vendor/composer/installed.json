@@ -1,0 +1,45 @@
+[
+    {
+        "name": "remdex/livehelperchat",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/LiveHelperChat/livehelperchat.git",
+            "reference": "d9d5be37474087fe26ac51a567a2822d6ff4fa44"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/LiveHelperChat/livehelperchat/zipball/d9d5be37474087fe26ac51a567a2822d6ff4fa44",
+            "reference": "d9d5be37474087fe26ac51a567a2822d6ff4fa44",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2.4"
+        },
+        "time": "2015-11-30 16:33:03",
+        "type": "project",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0+",
+            "LGPL-3.0+"
+        ],
+        "authors": [
+            {
+                "name": "Remigijus Kiminas",
+                "email": "remdex@gmail.com",
+                "homepage": "https://livehelperchat.com"
+            }
+        ],
+        "description": "Live Helper Chat - live support for your website. Featuring web and desktop clients. Compatible Windows, Linux, Mac. Desktop client powered by QT. Supports mobile phones based on XMPP service providers (GTalk, Xabber, Mono etc.)",
+        "homepage": "https://livehelperchat.com",
+        "keywords": [
+            "live support",
+            "livehelperchat",
+            "php",
+            "qt",
+            "xmpp"
+        ]
+    }
+]
