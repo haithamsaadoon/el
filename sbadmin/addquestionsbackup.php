@@ -81,10 +81,7 @@ color:#0063DC;
 color:#FF0084; 
 cursor: pointer; 
 }
-input
-{
-    font-size: 12px;
-}
+
 
     </style>
 
@@ -189,59 +186,78 @@ input
                     </div>
                 </div>
                 <!-- /.row -->
-             
+              <?php
+ require '../mysqlcon.php';
+$per_page = 5; 
+$page=1;
+if(isset($_GET['page']))
+{
+$page=$_GET['page'];
+}
 
-                <form action="addquestionshandler.php" method="post">
-             <?php
-                require '../mysqlcon.php';
-               $per_page = 5; 
-               $page=1;
-               if(isset($_GET['page']))
-               {
-               $page=$_GET['page'];
-               }
-                echo "<input type='hidden' name='examid' value=\"$examid\" />";
-               //$start = ($page-1)*$per_page;
-               $sql = "select * from exams where exa_id=$examid";
-               $result = mysqli_query($conn,$sql);
+$start = ($page-1)*$per_page;
+$sql = "select * from exams where exa_id=$examid";
+$result = mysqli_query($conn,$sql);
 
-               require '../phpfiles/multiplefunction.php';
-               require '../phpfiles/singlefunction.php';
-              // $olnumbering=$start+1;
-               echo "<ol type='1' >";
-               $row = mysqli_fetch_assoc($result);
+require '../phpfiles/multiplefunction.php';
+require '../phpfiles/singlefunction.php';
+$olnumbering=$start+1;
+echo "<ol type='1' start=\"$olnumbering\">";
+$row = mysqli_fetch_assoc($result);
 
-               for($i=1;$i<=$row['exa_nom'];$i++)
-               {
+for($i=$olnumbering;$i<=$row['exa_nom'];$i++)
+{
+    
+    
+    echo '<li>';
+    multiple($olnumbering);
+    echo '</li>';
+}
+ echo "</ol>";
 
+$total=$row['exa_nos']+$row['exa_nom'];
+if($olnumbering>$row['exa_nom']){
+    echo "<ol type='1' start=\"$olnumbering\">";
+    
+for($i=$olnumbering;$i<=$total;$i++)
+{
+   
+    echo '<li>';
+    single($olnumbering);
+    echo '</li>';
+}
+ echo "</ol>";
+ }
+ 
+ 
+ 
+?>
 
-                   echo '<li>';
-                   multiple($i);
-                   echo '</li>';
-               }
-                echo "</ol>";
-
-               $nosindex=$row['exa_nom']+1;
-               
-               echo "<ol type='1' start=\"$nosindex\">";
-               for($i=1;$i<=$row['exa_nos'];$i++)
-               {
-
-                   echo '<li>';
-                   single($i);
-                   echo '</li>';
-               }
-                echo "</ol>";
-               
-
-
-
-                ?>
-                    <input  type="submit" value="ادخل الاسئلة">
-                </form>
                 
                 
+                
+<?php
+//include('config.php');
 
+//Calculating no of pages
+require '../mysqlcon.php';
+$sql = "select que_id from questionss where que_exam_id=$examid union all select quem_id from questionsm where quem_exam_id=$examid";
+$result = mysqli_query($conn, $sql);
+$count = mysqli_num_rows($result);
+$pages = ceil($count/$per_page)
+?>
+
+<div id="loading" ></div>
+<div id="content" ></div>
+<ul id="pagination">
+<?php
+//Pagination Numbers
+for($i=1; $i<=$pages; $i++)
+{
+echo '<li id="'.$i.'">'."<a href=\"addquestions.php?page=$i\">$i</a>".'</li>';
+}
+?>
+</ul>
               
                
 
