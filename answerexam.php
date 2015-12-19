@@ -141,7 +141,7 @@ input{font-size: 12px;}
           <div class="col-md-9" style="background-color: white;width: 850px;margin-top: 10px">
             <div class="row">
                 <div class="col-md-12" style="font-size: 13px;">
-                        <form action="addquestionshandler.php" method="post">
+                        <form action="answerexamhandler.php" method="post">
              <?php
                 require 'mysqlcon.php';
                $per_page = 5; 
@@ -178,11 +178,9 @@ input{font-size: 12px;}
                $result = mysqli_query($conn,$sql);
                
                echo "<ol type='1' start=\"$nosindex\">";
-               for($i=1;$i<=$row['exa_nos'];$i++)
-               {
-
-                   echo '<li>';
-                   single($i);
+                while( $row = mysqli_fetch_assoc($result))
+              {  echo '<li>';
+                   single($row);
                    echo '</li>';
                }
                 echo "</ol>";
@@ -191,6 +189,7 @@ input{font-size: 12px;}
 
 
                 ?>
+                            
                     <input  type="submit" value="ادخل الاسئلة">
                 </form>
                     

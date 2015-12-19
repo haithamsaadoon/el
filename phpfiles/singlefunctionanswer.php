@@ -1,23 +1,24 @@
 <?php
 
-function single($startindex) {
+function single($row) {
+    extract($row);
   
-   echo "<input style='margin:5px;' name=\"s$startindex\" type='text' placeholder='ادخل السؤال' >";
+   echo "<p>".$que_question."</p>";
    
-   echo "<input name=\"sc$startindex\" style='margin:5px;' type='number' value='1' max='4' placeholder='ادخل رقم الاجابة الصحيح '>";
+   
     echo "<ol type=\"1\" >
             <li >
-                <input name=\"sa1$startindex\" style='margin:5px;' type='text' placeholder='ادخل الجواب'>
+                <input name=\"$que_id\" style='margin:5px;' type='radio' value='1'  >$que_a1
                 
             </li>
             <li>
-                <input name=\"sa2$startindex\" style='margin:5px;' type='text' placeholder='ادخل الجواب'>
+                <input name=\"$que_id\" style='margin:5px;' type='radio' value='2' >$que_a2
             </li>
             <li >
-                <input name=\"sa3$startindex\" style='margin:5px;' type='text' placeholder='ادخل الجواب'>
+                <input name=\"$que_id\" style='margin:5px;' type='radio' value='3' >$que_a3
             </li>
             <li >
-                <input name=\"sa4$startindex\"  style='margin:5px;'type='text' placeholder='ادخل الجواب'>
+                <input name=\"$que_id\"  style='margin:5px;'type='radio' value='4' >$que_a4
             </li>
 
 

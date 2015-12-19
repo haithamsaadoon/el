@@ -15,7 +15,6 @@ $sql = "select * from exams where exa_id=$examid";
 $result = mysqli_query($conn,$sql);
 $row = mysqli_fetch_assoc($result);
 //update questionsm set 
-
 for($i=1;$i<=$row['exa_nom'];$i++)
   {    
     if(!isset(${"mc1".$i})){${"mc1".$i}=0;}
