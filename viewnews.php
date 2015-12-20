@@ -31,8 +31,6 @@ if(isset($_GET["login"]))
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" type="text/css" href="css/carousal.css">
         <link rel="stylesheet" href="css/main.css">
-        <link href="sbadmin/bower_components/DataTables/media/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        
         <script src="js/vendor/jquery-1.11.2.min.js"></script>
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
          <script src="jwplayer-7.0.0/jwplayer.js"></script>
@@ -53,14 +51,28 @@ if(isset($_GET["login"]))
                 
             });
       </script>
+      <script type="text/javascript">
+var LHCChatOptions = {};
+LHCChatOptions.opt = {widget_height:340,widget_width:300,popup_height:520,popup_width:500};
+(function() {
+var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+var referrer = (document.referrer) ? encodeURIComponent(document.referrer.substr(document.referrer.indexOf('://')+1)) : '';
+var location  = (document.location) ? encodeURIComponent(window.location.href.substring(window.location.protocol.length)) : '';
+po.src = '//localhost:8888/el2/vendor/remdex/livehelperchat/lhc_web/index.php/ara/chat/getstatus/(click)/internal/(position)/bottom_left/(ma)/br/(top)/350/(units)/pixels/(leaveamessage)/true?r='+referrer+'&l='+location;
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+</script>
+      
+      
+      
+      
     </head>
     <body>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
    
-       
-        
+      
               
         
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -79,7 +91,9 @@ if(isset($_GET["login"]))
           كلية الرافدين الجامعة - نظام التعليم الاليكتروني
            </a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
+        <?php
+        session_start();
+       if(!isset($_SESSION['use_id'])) echo '  <div id="navbar" class="navbar-collapse collapse">
             <form method="post" action="loginhandler.php" class="navbar-form navbar-left" role="form">
             <div class="form-group">
               <input name="username" type="text" placeholder="اسم المستخدم" class="form-control">
@@ -90,7 +104,26 @@ if(isset($_GET["login"]))
             <button type="submit" class="btn btn-success">تسجيل دخول</button>
           </form>
         </div><!--/.navbar-collapse -->
-      </div>
+      </div>';
+      
+       
+       else{
+            echo '<div id="navbar" class="navbar-collapse collapse">
+            <form method="post" action="logouthandler.php" class="navbar-form navbar-left" role="form">
+            <div class="form-group">
+            <span style="color:white;">اهلا وسهلا</span>
+            </div>
+            <div class="form-group">
+               <span style="color:white;">اهلا وسهلا بك في نظام التعليم الاليكتروني</span>
+            </div>
+            <button type="submit" class="btn btn-success">تسجيل خروج</button>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>';
+       }
+                  ?>
+          
+    
     </nav>
 <div class="container">
 
@@ -108,47 +141,47 @@ if(isset($_GET["login"]))
 </div>
 
     <!-- Carousal for the News -->
-      <div class="container">
-    	
-      
-       
-   
-
-    <div id="wrraper-row" class="container zerorightmargin zeropadding ">
+    <?php 
+    require 'phpfiles/newscarousal.php'; 
+    
+    ?>
+       <div id="wrraper-row" class="container zerorightmargin zeropadding ">
       <!-- Example row of columns -->
       <div id="wrapper-row" class="row zerorightmargin">
       <div id="side-nav" class="col-md-3 zeropadding">
         <ul class="rightnav nav nav-pills nav-stacked withborder">
-  <li role="presentation" class="active"><a href="#">الصفحة الرئيسية</a></li>
-  <?php
-  require './phpfiles/ullideps.php';
-  ?>
- 
-</ul>
+    <li role="presentation" class="active"><a href="#">الصفحة الرئيسية</a></li>
+   <?php
+   require_once './phpfiles/ullideps.php';
+   ?>
+
+  </ul>
 </div>
         
           <div class="col-md-9" style="background-color: white;width: 850px;margin-top: 10px">
             <div class="row">
                 <div class="col-md-12">
+               <?php
+               $newsid=$_GET['id'];
+               
+               $sql = "select * from news where new_id=$newsid";
+                $result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
+                $row = mysqli_fetch_assoc($result);
               
-              <br/>
-                    <div class="table-responsive" style="overflow: hidden">
-                                    <table id="users-table" class="table table-bordered table-hover table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>تحميل  
-                                                    <br/>
-                                                       
-                                                    ملف المادة</th>
-                                                <th>عنوان الكورس</th>
-                                                <th>اسم التدريسي</th>
-                                                <th>رابط الامتحانات</th>
-                                                
-                                            </tr>
-                                        </thead>
-                                        
-                                    </table>
-                    </div>
+                 
+                    echo "<h2>$row[new_title]</h2>";
+                   echo " <p>$row[new_detail]</p>";
+                   echo " <img class='img-responsive' src=\"sbadmin/downloadimage.php?id=$newsid\" alt='Chania' width='460' height='345'> ";
+                    
+                  
+                 
+
+                   
+                        
+
+                   ?> 
+                    
+                    
                     
                     
                 </div><!-- of the jwplayer col-->
@@ -157,7 +190,6 @@ if(isset($_GET["login"]))
             </div><!-- end of the main content row-->
             
           
-            
             
             
 
@@ -173,8 +205,7 @@ if(isset($_GET["login"]))
      
       
       
-      </div>
-        
+      </div> 
      
         <footer class="site-footer">
         <div class="container">
@@ -204,40 +235,9 @@ if(isset($_GET["login"]))
 
         <script src="js/vendor/bootstrap.min.js"></script>
 
-        <script src="js/plugins/morris/raphael.min.js"></script>
-    <script src="js/plugins/morris/morris.min.js"></script>
-    <script src="js/plugins/morris/morris-data.js"></script>
-    <script src="bower_components/DataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
-    <script src="bower_components/DataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
-        
-    <script src="sbadmin/js/plugins/morris/raphael.min.js" type="text/javascript"></script>
-    <script src="sbadmin/js/plugins/morris/morris.min.js" type="text/javascript"></script>
-    <script src="sbadmin/js/plugins/morris/morris-data.js" type="text/javascript"></script>
-    <script src="sbadmin/bower_components/DataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
-    <script src="sbadmin/bower_components/DataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+       
         <script src="js/main.js"></script>
         <script src="js/carousal.js"></script>
-        
-        <script>
-            <?php
-            $depid=$_GET['depid'];
-            $stage=$_GET['stage'];
-            ?>
-    
-    $('#users-table').DataTable( {
-        "ajax": {"url":"phpfiles/coursesviewjson.php?<?php echo "depid=$depid&stage=$stage";?>","datatype":"jsonp"},
-        
-        "columnDefs": [ {
-                    "targets": 0,
-                    
-                    "render": function ( data, type, full, meta ) {
-                      return '<a href="'+'sbadmin/downloadpdf.php?id='+data+'">'+data+'</a>';
-                    }
-                  } ]
-                
-    } );
-    
-    </script>
       
     </body>
     

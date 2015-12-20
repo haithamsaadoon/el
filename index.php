@@ -72,30 +72,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
    
-        <div id="support" style="">
-            <a href="#" >
-                
-            <img style="" alt="Support Icon" src="img/support.png"/>
-
-                    <div class="panel panel-danger">
-                      <div class="panel-heading">
-                        <h3 class="panel-title">خدمة الدعم المباشر</h3>
-                      </div>
-                      <div class="panel-body">
-                          <form class="form-inline">
-                              <label>الاسم</label><input type="text" />
-                              <label>الرسالة</label>
-                              <textarea>
-                                  
-                              </textarea>
-                              <input type="submit" class="form-control" value="أرسل"/>
-                              
-                          </form>
-                      </div>
-                    </div>
-            </a>
-        </div> 
-        
+      
               
         
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -114,7 +91,9 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
           كلية الرافدين الجامعة - نظام التعليم الاليكتروني
            </a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
+        <?php
+        session_start();
+       if(!isset($_SESSION['use_id'])) echo '  <div id="navbar" class="navbar-collapse collapse">
             <form method="post" action="loginhandler.php" class="navbar-form navbar-left" role="form">
             <div class="form-group">
               <input name="username" type="text" placeholder="اسم المستخدم" class="form-control">
@@ -125,7 +104,37 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
             <button type="submit" class="btn btn-success">تسجيل دخول</button>
           </form>
         </div><!--/.navbar-collapse -->
-      </div>
+      </div>';
+      
+       
+       else{
+            echo '<div id="navbar" class="navbar-collapse collapse">
+            <form method="post" action="logouthandler.php" class="navbar-form navbar-left" role="form">
+            <div class="form-group">
+            <span style="color:white;">اهلا وسهلا</span>
+            </div>
+            <div class="form-group">
+               <span style="color:white;">اهلا وسهلا بك في نظام التعليم الاليكتروني</span>
+            </div>
+            <button type="submit" class="btn btn-success">تسجيل خروج</button>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>';
+       }
+                  ?>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
     </nav>
 <div class="container">
 
@@ -135,7 +144,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
 </h3>
         <h3 style="float: left;color: white;padding-left: 40px;padding-top:50px;">
             
-            eLearning is available where you are 
+            eLearning is available everywhere
         </h3>
   
     </div>
@@ -172,8 +181,8 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
                       image: "http://content.jwplatform.com/thumbs/HBhTSDD4-480.jpg",
                       width: 830,
                       height: 415,//return to 360 to scale down th player
-                      title: 'Basic Video Embed',
-                      description: 'A video with a basic title and description!'
+                      title: 'محاضرات فيديوية',
+                      
                   });
                   </script>
                   <script>
@@ -195,7 +204,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
                     <p>المحاضرة الاولى:
                         انظمة التشغيل ذات المصدر المفتوح
                   </p>
-                  <a href="javascript:loadVideo('file1.mp4','image1.jpg')" class="thumbnail">
+                  <a href="javascript:loadVideo('http://localhost:8888/el2/videos/sample.flv','image1.jpg')" class="thumbnail">
                     <img src="http://content.jwplatform.com/thumbs/HBhTSDD4-480.jpg" alt="...">
                   </a>
                 </div>
