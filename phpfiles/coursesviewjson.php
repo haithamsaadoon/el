@@ -33,7 +33,7 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     $outp .= '"'. $rs["cou_name"]        . '",';
     $outp .= '"'. $rs["use_first"]." ".$rs["use_second"]." ".$rs["use_last"] . '",';
     
-    $outp .= '"'. $rs["cou_stage"]     . '"]'; 
+    $outp .= '"'. $rs["cou_id"]     . '"]'; 
      
 }
 $outp .="]}";

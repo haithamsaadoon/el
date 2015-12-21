@@ -233,7 +233,15 @@ if(isset($_GET["login"]))
                     "render": function ( data, type, full, meta ) {
                       return '<a href="'+'sbadmin/downloadpdf.php?id='+data+'">'+data+'</a>';
                     }
-                  } ]
+                  },
+                  {
+                    "targets": 3,
+                    
+                    "render": function ( data, type, full, meta ) {
+                      return '<a href="'+'sbadmin/examdetail.php?id='+data+'">'+'<img height="20px" width="20px" src="img/exam.png">'+'</a>';
+                    }
+                  }
+                    ]
                 
     } );
     
