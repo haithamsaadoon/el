@@ -1,4 +1,5 @@
 <?php
+session_start();
 $alert="";
 if(isset($_GET["login"]))
 {
@@ -11,7 +12,6 @@ if(isset($_GET["login"]))
               </div>';
       }
 }
-$examid=10;
 ?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
@@ -32,6 +32,8 @@ $examid=10;
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" type="text/css" href="css/carousal.css">
         <link rel="stylesheet" href="css/main.css">
+        <link href="sbadmin/bower_components/DataTables/media/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        
         <script src="js/vendor/jquery-1.11.2.min.js"></script>
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
          <script src="jwplayer-7.0.0/jwplayer.js"></script>
@@ -52,30 +54,13 @@ $examid=10;
                 
             });
       </script>
-      <script type="text/javascript">
-var LHCChatOptions = {};
-LHCChatOptions.opt = {widget_height:340,widget_width:300,popup_height:520,popup_width:500};
-(function() {
-var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-var referrer = (document.referrer) ? encodeURIComponent(document.referrer.substr(document.referrer.indexOf('://')+1)) : '';
-var location  = (document.location) ? encodeURIComponent(window.location.href.substring(window.location.protocol.length)) : '';
-po.src = '//localhost:8888/el2/vendor/remdex/livehelperchat/lhc_web/index.php/ara/chat/getstatus/(click)/internal/(position)/bottom_left/(ma)/br/(top)/350/(units)/pixels/(leaveamessage)/true?r='+referrer+'&l='+location;
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-})();
-</script>
-      
-        <style>
-input{font-size: 12px;}
-        </style>
-      
-      
     </head>
     <body>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
    
-    
+       
         
               
         
@@ -95,7 +80,11 @@ input{font-size: 12px;}
           كلية الرافدين الجامعة - نظام التعليم الاليكتروني
            </a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
+          <?php
+       
+        
+          
+       if(!isset($_SESSION['use_id'])) echo '  <div id="navbar" class="navbar-collapse collapse">
             <form method="post" action="loginhandler.php" class="navbar-form navbar-left" role="form">
             <div class="form-group">
               <input name="username" type="text" placeholder="اسم المستخدم" class="form-control">
@@ -106,7 +95,24 @@ input{font-size: 12px;}
             <button type="submit" class="btn btn-success">تسجيل دخول</button>
           </form>
         </div><!--/.navbar-collapse -->
-      </div>
+      </div>';
+      
+       
+       else{
+            echo '<div id="navbar" class="navbar-collapse collapse">
+            <form method="post" action="logouthandler.php" class="navbar-form navbar-left" role="form">
+            <div class="form-group">
+            <span style="color:white;">اهلا وسهلا</span>
+            </div>
+            <div class="form-group">
+               <span style="color:white;"> بك في نظام التعليم الاليكتروني</span>
+            </div>
+            <button type="submit" class="btn btn-success">تسجيل خروج</button>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>';
+       }
+                  ?>
     </nav>
 <div class="container">
 
@@ -116,7 +122,7 @@ input{font-size: 12px;}
 </h3>
         <h3 style="float: left;color: white;padding-left: 40px;padding-top:50px;">
             
-            eLearning is available where you are 
+            eLearning is available everywhere
         </h3>
   
     </div>
@@ -124,80 +130,48 @@ input{font-size: 12px;}
 </div>
 
     <!-- Carousal for the News -->
-    <div class="container">
-       <div id="wrraper-row" class="container zerorightmargin zeropadding ">
+      <div class="container">
+    	
+    <div id="wrraper-row" class="container zerorightmargin zeropadding ">
       <!-- Example row of columns -->
       <div id="wrapper-row" class="row zerorightmargin">
       <div id="side-nav" class="col-md-3 zeropadding">
         <ul class="rightnav nav nav-pills nav-stacked withborder">
-    <li role="presentation" class="active"><a href="#">الصفحة الرئيسية</a></li>
-   <?php
-   require_once './phpfiles/ullideps.php';
-   ?>
-
-  </ul>
-</div>
+        <li role="presentation" class="active"><a href="index.php">الصفحة الرئيسية </a></li>
+        <?php
+        require './phpfiles/ullideps.php';
+        ?>
+ 
+        </ul>
+        </div>
         
           <div class="col-md-9" style="background-color: white;width: 850px;margin-top: 10px">
             <div class="row">
-                <div class="col-md-12" style="font-size: 14px;font-weight: bold;">
-                        <form action="answerexamhandler.php" method="post">
-             <?php
-                require 'mysqlcon.php';
-               $per_page = 5; 
-               $page=1;
-               if(isset($_GET['page']))
-               {
-               $page=$_GET['page'];
-               }
-                echo "<input type='hidden' name='examid' value=\"$examid\" />";
-               //$start = ($page-1)*$per_page;
-               $sql = "select * from exams where exa_id=$examid";
-               $result = mysqli_query($conn,$sql);
-
-               require './phpfiles/multiplefunctionanswer.php';
-               require './phpfiles/singlefunctionanswer.php';
-              // $olnumbering=$start+1;
-               $sql = "select * from questionsm where quem_exam_id=$examid";
-               $result = mysqli_query($conn,$sql);
-               
-               $nosindex=1;
-               echo "<ol type='1' >";
-              while( $row = mysqli_fetch_assoc($result))
-              {
-                  echo '<li>';
-                   multiple($row);
-                   echo '</li>';
-                    $nosindex++;
-              }
+                <div class="col-md-12">
               
-                echo "</ol>";
-                
-
-               $sql = "select * from questionss where que_exam_id=$examid";
-               $result = mysqli_query($conn,$sql);
-               
-               echo "<ol type='1' start=\"$nosindex\">";
-                while( $row = mysqli_fetch_assoc($result))
-              {  echo '<li>';
-                   single($row);
-                   echo '</li>';
-               }
-                echo "</ol>";
-               
-
-
-
-                ?>
-                            
-                    <input  type="submit" value="ادخل الاجابات">
-                </form>
-                    
-                    
+              <br/>
+                    <div class="table-responsive" style="overflow: hidden">
+                                    <table id="users-table" class="table table-bordered table-hover table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>عنوان الامتحان  
+                                                    <br/>
+                                                       
+                                                    </th>
+                                                <th>تاريخ بدأ الامتحان  </th>
+                                                <th>تاريخ اغلاق انتهاء الامتحان</th>
+                                                <th>اداء الامتحان </th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        
+                                    </table>
+                    </div>
                     
                     
                 </div><!-- of the jwplayer col-->
-               
+                
+                
             </div><!-- end of the main content row-->
             
           
@@ -217,7 +191,8 @@ input{font-size: 12px;}
      
       
       
-      </div> 
+      </div>
+        
      
         <footer class="site-footer">
         <div class="container">
@@ -247,9 +222,45 @@ input{font-size: 12px;}
 
         <script src="js/vendor/bootstrap.min.js"></script>
 
-       
+        <script src="js/plugins/morris/raphael.min.js"></script>
+    <script src="js/plugins/morris/morris.min.js"></script>
+    <script src="js/plugins/morris/morris-data.js"></script>
+    <script src="bower_components/DataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="bower_components/DataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+        
+    <script src="sbadmin/js/plugins/morris/raphael.min.js" type="text/javascript"></script>
+    <script src="sbadmin/js/plugins/morris/morris.min.js" type="text/javascript"></script>
+    <script src="sbadmin/js/plugins/morris/morris-data.js" type="text/javascript"></script>
+    <script src="sbadmin/bower_components/DataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="sbadmin/bower_components/DataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
         <script src="js/main.js"></script>
         <script src="js/carousal.js"></script>
+        
+        <script>
+            <?php
+            
+            //$depid=$_SESSION["use_dep_id"];
+            //$stage=$_SESSION["use_stage"];
+            $depid=10;
+            $stage=1;
+            ?>
+    
+    $('#users-table').DataTable( {
+        "ajax": {"url":"phpfiles/examdetailjson.php?<?php echo "depid=$depid&stage=$stage";?>","datatype":"jsonp"},
+        
+        "columnDefs": [ 
+                  {
+                    "targets": 3,
+                    
+                    "render": function ( data, type, full, meta ) {
+                      return '<a href="'+'answerexam.php?id='+data+'">'+'<img height="30px" width="30px" src="img/exam.png">'+'</a>';
+                    }
+                  }
+                    ]
+                
+    } );
+    
+    </script>
       
     </body>
     

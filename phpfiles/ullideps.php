@@ -9,7 +9,7 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
         
-        echo "<li role='presentation'><a href='#'>".$row['dep_name']."</a><ul class='submenu'>";
+        echo "<li role='presentation'><a href='#!'>".$row['dep_name']."</a><ul class='submenu'>";
         for($i=1;$i<=$row["dep_stages"];$i++)
         {
             $stage_name="";

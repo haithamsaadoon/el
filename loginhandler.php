@@ -11,13 +11,12 @@ if (mysqli_num_rows($result) > 0) {
     session_start();
      $_SESSION["use_permission"] =$row["use_permission"] ;
      $_SESSION["use_id"] =$row["use_id"] ;
-      $_SESSION["use_permission"] =$row["use_permission"] ;
-     $_SESSION["use_id"] =$row["use_first"] ;
-
-
+     $_SESSION["use_dep_id"] =$row["use_dep_id"] ;
+     $_SESSION["use_stage"] =$row["use_stage"] ;
+    
      
     mysqli_close($conn);
-    switch ($row["use_permission"])
+   switch ($row["use_permission"])
     {
        
         case "admin":

@@ -79,7 +79,11 @@ if(isset($_GET["login"]))
           كلية الرافدين الجامعة - نظام التعليم الاليكتروني
            </a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
+          <?php
+        session_start();
+        
+          
+       if(!isset($_SESSION['use_id'])) echo '  <div id="navbar" class="navbar-collapse collapse">
             <form method="post" action="loginhandler.php" class="navbar-form navbar-left" role="form">
             <div class="form-group">
               <input name="username" type="text" placeholder="اسم المستخدم" class="form-control">
@@ -90,7 +94,24 @@ if(isset($_GET["login"]))
             <button type="submit" class="btn btn-success">تسجيل دخول</button>
           </form>
         </div><!--/.navbar-collapse -->
-      </div>
+      </div>';
+      
+       
+       else{
+            echo '<div id="navbar" class="navbar-collapse collapse">
+            <form method="post" action="logouthandler.php" class="navbar-form navbar-left" role="form">
+            <div class="form-group">
+            <span style="color:white;">اهلا وسهلا</span>
+            </div>
+            <div class="form-group">
+               <span style="color:white;"> بك في نظام التعليم الاليكتروني</span>
+            </div>
+            <button type="submit" class="btn btn-success">تسجيل خروج</button>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>';
+       }
+                  ?>
     </nav>
 <div class="container">
 
@@ -110,22 +131,18 @@ if(isset($_GET["login"]))
     <!-- Carousal for the News -->
       <div class="container">
     	
-      
-       
-   
-
     <div id="wrraper-row" class="container zerorightmargin zeropadding ">
       <!-- Example row of columns -->
       <div id="wrapper-row" class="row zerorightmargin">
       <div id="side-nav" class="col-md-3 zeropadding">
         <ul class="rightnav nav nav-pills nav-stacked withborder">
-  <li role="presentation" class="active"><a href="#">الصفحة الرئيسية</a></li>
-  <?php
-  require './phpfiles/ullideps.php';
-  ?>
+        <li role="presentation" class="active"><a href="index.php">الصفحة الرئيسية </a></li>
+        <?php
+        require './phpfiles/ullideps.php';
+        ?>
  
-</ul>
-</div>
+        </ul>
+        </div>
         
           <div class="col-md-9" style="background-color: white;width: 850px;margin-top: 10px">
             <div class="row">
@@ -231,14 +248,14 @@ if(isset($_GET["login"]))
                     "targets": 0,
                     
                     "render": function ( data, type, full, meta ) {
-                      return '<a href="'+'sbadmin/downloadpdf.php?id='+data+'">'+data+'</a>';
+                      return '<a href="'+'sbadmin/downloadpdf.php?id='+data+'">'+'<img height="30px" width="30px" src="img/pdf.png">'+'</a>';
                     }
                   },
                   {
                     "targets": 3,
                     
                     "render": function ( data, type, full, meta ) {
-                      return '<a href="'+'sbadmin/examdetail.php?id='+data+'">'+'<img height="20px" width="20px" src="img/exam.png">'+'</a>';
+                      return '<a href="'+'examdetail.php?id='+data+'">'+'<img height="30px" width="30px" src="img/exam.png">'+'</a>';
                     }
                   }
                     ]

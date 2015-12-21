@@ -114,7 +114,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
             <span style="color:white;">اهلا وسهلا</span>
             </div>
             <div class="form-group">
-               <span style="color:white;">اهلا وسهلا بك في نظام التعليم الاليكتروني</span>
+               <span style="color:white;"> بك في نظام التعليم الاليكتروني</span>
             </div>
             <button type="submit" class="btn btn-success">تسجيل خروج</button>
           </form>
@@ -123,18 +123,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
        }
                   ?>
           
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+       
     </nav>
 <div class="container">
 
